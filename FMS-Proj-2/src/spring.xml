@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Wiring the dependencies for FMS.</description>
+
+	<context:component-scan base-package="com.fms" />
+	
+	<bean id = "facilityApp" 
+		class = "com.fms.facility.details.FacilityAppImpl"
+		scope = "prototype" />
+	<bean id = "facility" 
+		class = "com.fms.facility.details.FacilityImpl"
+		scope = "prototype" >
+		</bean>
+	<bean id = "person" 
+		class = "com.fms.facility.usage.PersonImpl"
+		scope = "prototype" >
+		<constructor-arg value = "Neil"/>
+		<constructor-arg value = "Christensen"/>
+		</bean>
+	<bean id = "unit" 
+		class = "com.fms.facility.usage.UnitImpl"
+		scope = "prototype">
+		<constructor-arg value = "Room 101"/>
+		<constructor-arg value = "true"/>
+		</bean>
+	<bean id = "finances" 
+		class = "com.fms.facility.details.FinancesImpl"
+		scope = "prototype" />
+	<bean id = "utilities" 
+		class = "com.fms.facility.usage.UtilitiesImpl"
+		scope = "prototype" />
+	<bean id = "tenantCosts" 
+		class = "com.fms.facility.usage.TenantCostsImpl"
+		scope = "prototype" />
+	<bean id = "inspection" 
+		class = "com.fms.facility.maintenance.InspectionImpl"
+		scope = "prototype" />
+	<bean id = "employee" 
+		class = "com.fms.facility.maintenance.EmployeeImpl"
+		scope = "prototype">
+		<constructor-arg value = "Danny"/>
+		<constructor-arg value = "Smith"/>
+		</bean>
+	<bean id = "equipmentExpenses"
+		class = "com.fms.facility.maintenance.equipmentExpensesImpl"
+		scope = "prototype">
+		</bean>
+	<bean id = "successRate"
+		class = "com.fms.facility.maintenance.successRateImpl"
+		scope = "prototype">
+		</bean>
+	<bean id = "improvementProjects"
+		class = "com.fms.facility.details.improvementProjectsImpl"
+		scope = "prototype">
+		</bean>
+	<bean id = "officeRoster"
+		class = "com.fms.facility.details.officeRosterImpl"
+		scope = "prototype">
+		</bean>
+	<bean id = "serviceContracts"
+		class = "com.fms.facility.details.serviceContractsImpl"
+		scope = "prototype">
+		</bean>
+	<bean id = "unitRecord"
+		class = "com.fms.facility.usage.unitRecordImpl"
+		scope = "prototype">
+		</bean>
+	<bean id = "unitRemodel"
+		class = "com.fms.facility.usage.unitRemodelImpl"
+		scope = "prototype">
+		</bean>
+	<bean id = "maintenance" 
+		class = "com.fms.facility.maintenance.MaintenanceImpl"
+		scope = "prototype">
+		<constructor-arg value = "1"/>
+		</bean>
+	</beans>
